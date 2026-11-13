@@ -1,0 +1,174 @@
+object MainForm: TMainForm
+  Left = 320
+  Height = 540
+  Top = 180
+  Width = 760
+  Caption = 'Voxtral Realtime - Reconnaissance vocale (Mistral)'
+  ClientHeight = 511
+  ClientWidth = 744
+  LCLVersion = '2.2.6.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object pnlTop: TPanel
+    Left = 0
+    Height = 120
+    Top = 0
+    Width = 744
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 120
+    ClientWidth = 744
+    TabOrder = 0
+    object lblApiKey: TLabel
+      Left = 10
+      Height = 17
+      Top = 12
+      Width = 96
+      Caption = 'Clé API Mistral :'
+    end
+    object edtApiKey: TEdit
+      Left = 130
+      Height = 25
+      Top = 8
+      Width = 400
+      EchoMode = emPassword
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+    object lblModele: TLabel
+      Left = 10
+      Height = 17
+      Top = 46
+      Width = 55
+      Caption = 'Modèle :'
+    end
+    object cmbModele: TComboBox
+      Left = 130
+      Height = 25
+      Top = 42
+      Width = 400
+      ItemHeight = 17
+      Items.Strings = (
+        'voxtral-mini-transcribe-realtime-3'
+        'voxtral-mini-transcribe-realtime-2602'
+      )
+      TabOrder = 1
+      Text = 'voxtral-mini-transcribe-realtime-3'
+    end
+    object lblLangue: TLabel
+      Left = 10
+      Height = 17
+      Top = 82
+      Width = 60
+      Caption = 'Langue :'
+    end
+    object cmbLangue: TComboBox
+      Left = 130
+      Height = 25
+      Top = 78
+      Width = 100
+      ItemHeight = 17
+      Items.Strings = (
+        '(auto)'
+        'fr'
+        'en'
+        'de'
+        'es'
+        'it'
+        'pt'
+        'nl'
+      )
+      ItemIndex = 0
+      TabOrder = 2
+      Text = '(auto)'
+    end
+    object lblDelai: TLabel
+      Left = 260
+      Height = 17
+      Top = 82
+      Width = 70
+      Caption = 'Délai (ms) :'
+    end
+    object seDelai: TSpinEdit
+      Left = 360
+      Height = 25
+      Top = 78
+      Width = 90
+      MaxValue = 2400
+      MinValue = 80
+      TabOrder = 3
+      Value = 480
+    end
+  end
+  object pnlBottom: TPanel
+    Left = 0
+    Height = 92
+    Top = 419
+    Width = 744
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 92
+    ClientWidth = 744
+    TabOrder = 1
+    object btnStart: TButton
+      Left = 10
+      Height = 30
+      Top = 8
+      Width = 100
+      Caption = 'Démarrer'
+      OnClick = btnStartClick
+      TabOrder = 0
+    end
+    object btnStop: TButton
+      Left = 120
+      Height = 30
+      Top = 8
+      Width = 100
+      Caption = 'Arrêter'
+      OnClick = btnStopClick
+      TabOrder = 1
+    end
+    object btnEffacer: TButton
+      Left = 230
+      Height = 30
+      Top = 8
+      Width = 100
+      Caption = 'Effacer'
+      OnClick = btnEffacerClick
+      TabOrder = 2
+    end
+    object chkWav: TCheckBox
+      Left = 360
+      Height = 21
+      Top = 12
+      Width = 130
+      Caption = 'Enregistrer WAV :'
+      TabOrder = 3
+    end
+    object edtWav: TEdit
+      Left = 500
+      Height = 25
+      Top = 8
+      Width = 220
+      TabOrder = 4
+      Text = 'enregistrement.wav'
+    end
+    object lblEtat: TLabel
+      Left = 10
+      Height = 17
+      Top = 62
+      Width = 720
+      Caption = 'Prêt.'
+    end
+  end
+  object memTranscript: TMemo
+    Left = 0
+    Height = 299
+    Top = 120
+    Width = 744
+    Align = alClient
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 2
+  end
+end
